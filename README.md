@@ -22,6 +22,10 @@ service 处理服务端返回的数据（类似data format），例如 service �
 ### api层
 负责与所有后端数据接口对接
 
+## 项目结构思维导图
+
+http://naotu.baidu.com/file/90ceca4168644e371eea3b7dca116e91?token=3d7a4835169445d7
+
 ## 项目运行
 
 ``` bash
@@ -29,7 +33,7 @@ service 处理服务端返回的数据（类似data format），例如 service �
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run start
 
 # build for production with minification
 npm run build
