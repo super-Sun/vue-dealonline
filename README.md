@@ -1,7 +1,7 @@
 # vue-dealonline
 
 ## 技术栈：
-vue-cli + vuex + vux + easy-mock-cli
+vue-cli + vuex + vux + easy-mock(easy-mock-cli)
 ## 架构：
 表现层、业务层、api层、基础部件及其他(utils、libs)
 ## 结构解析
