@@ -4,7 +4,7 @@
       <cell-box>
         <div style="width:76px;">处罚决定书编号</div>
         <div style="flex: 1; text-align: center">123456789102222</div>
-        <div style="width: 50px; text-align: right" @click="showHideOnBlur = !showHideOnBlur">x</div>
+        <div style="width: 50px; text-align: right" @click="showHideOnBlur = !showHideOnBlur">+</div>
       </cell-box>
     </group>
     <!--预览效果图-->
@@ -26,7 +26,7 @@
 
 <script type="text/ecmascript-6">
   import { Group, Cell, CellBox, XButton, XDialog } from 'vux'
-  import { demo } from '@/api/index'
+  import { getDealDetail } from '@/service/payFine/index'
 
   export default {
     data () {
@@ -36,8 +36,13 @@
         isDomReady: false
       }
     },
+    created () {
+      // 调用业务类
+      getDealDetail().then((result) => {
+        console.log(result)
+      })
+    },
     mounted () {
-      // console.log(this.$route.params.id)
       // 使用vux-loading组件
       this.$vux.loading.show({
         text: '加载中'
@@ -50,13 +55,11 @@
     },
     methods: {
       viewDidload () {
-        demo.v2_pet_findByStatus_get().then((result) => {
-          console.log('result: ' + result)
-          if (result.data) {
-            this.$vux.loading.hide()
-            this.isDomReady = true
-          }
-        })
+        // TODO
+        setTimeout(() => {
+          this.$vux.loading.hide()
+          this.isDomReady = true
+        }, 2000)
       }
     },
     components: {

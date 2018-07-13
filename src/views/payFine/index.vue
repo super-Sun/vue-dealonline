@@ -1,5 +1,12 @@
 <template>
   <div>
+    <!--自定义组件调试-->
+    <div style="padding: 0 15px;">
+      <cell-card></cell-card>
+      <cell-card link="http://www.baidu.com" :mainTitle="'浙A12345'" :subTitle="'车辆状态：正常'" :rightTitle="'去缴费'" customClass="custom" isLink></cell-card>
+      <cell-card :subTitle="'浙A12345'" :rightTitle="'去缴费'" :content="'未处理违法(0)条'" customClass="custom" isLink></cell-card>
+    </div>
+    <!--vux组件调试-->
     <group>
       <cell :title="('按已绑定车辆')" :link="{path:'/next', name: 'jdsbh',  query:{id:1}, params:{id:11}}"></cell>
       <cell :title="('按驾驶证号')" :link="{path:'/next', params:{id:2}}"></cell>
@@ -25,6 +32,7 @@
     XSwitch
   } from 'vux'
   import { getDealDetail } from '@/service/payFine/index'
+  import CellCard from '@components/common/cell-card'
   import { ERR_OK } from '@/consts/const'
 
   export default {
@@ -39,7 +47,8 @@
       Datetime,
       XNumber,
       XTextarea,
-      XSwitch
+      XSwitch,
+      CellCard
     },
     data () {
       return {

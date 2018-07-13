@@ -10,11 +10,13 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
+      title: 'page1',
       component: Index
     },
     {
       path: '/next',
       name: 'jdsbh',
+      title: 'page2',
       component: Jdsbh
     }
   ]
